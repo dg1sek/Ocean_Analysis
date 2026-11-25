@@ -1,0 +1,139 @@
+Region WPWP - Western Pacific warm pool 
+Annual series 1850-2025, n = 176. Periods scanned 4-150 yr.
+
+== A. Maximum-likelihood sinusoid scan (AR(1) errors), AIC gain = n log(RSS0/RSS1) - 6 ==
+AR(1) phi = 0.46; fitted power-law exponent (2-30 yr) = 0.80; 95% of the best AIC gain from noise: AR(1) 9.6, power law 11.3
+ region trend_order rank period_yr amp_K dAIC p_AR1 p_powerlaw
+   WPWP           1    1     150.0 0.296  9.3 0.050         NA
+   WPWP           1    2       6.8 0.056  0.8    NA         NA
+   WPWP           1    3       9.1 0.064 -0.4    NA         NA
+   WPWP           2    1       6.8 0.056  2.9 0.815      0.813
+   WPWP           2    2      62.7 0.082  2.6    NA         NA
+   WPWP           2    3       9.1 0.062  2.3    NA         NA
+   WPWP           3    1       6.8 0.055  2.9 0.856         NA
+   WPWP           3    2       9.1 0.061  2.6    NA         NA
+   WPWP           3    3      61.6 0.075  0.7    NA         NA
+
+== B. Fixed periods: 85 yr (Gleissberg), 40 and 24 yr (Alf's SSA components), 22 yr (Hale), 11 yr ==
+ period trend_order amp_K  se_K dAIC_scan_definition dAIC_ML_phi_refitted
+     85           1 0.147 0.080                 -0.3                 -0.9
+     85           2 0.036 0.030                 -2.6                 -2.6
+     85           3 0.049 0.028                 -1.3                 -1.1
+     40           1 0.070 0.075                 -2.8                 -3.2
+     40           2 0.016 0.028                 -3.7                 -3.7
+     40           3 0.016 0.027                 -3.7                 -3.7
+     24           1 0.058 0.058                 -2.8                 -3.0
+     24           2 0.047 0.026                 -0.9                 -0.8
+     24           3 0.047 0.025                 -0.7                 -0.6
+     22           1 0.058 0.055                 -2.8                 -2.9
+     22           2 0.038 0.026                 -1.9                 -1.9
+     22           3 0.042 0.025                 -1.3                 -1.2
+     11           1 0.018 0.032                 -3.6                 -3.7
+     11           2 0.016 0.023                 -3.5                 -3.5
+     11           3 0.013 0.023                 -3.6                 -3.6
+
+== C. FFT (4 strongest components of the quadratic-detrended annual series) and SSA (annual, L = N/3) ==
+FFT top-4 periods (yr): 58.7, 25.1, 6.8, 19.6 ; amplitudes (K): 0.077, 0.057, 0.048, 0.047 ; share of variance of the sum: 0.26 
+ component share_pct AR1_q95_pct above
+         1       8.8        12.9 FALSE
+         2       7.8        10.7 FALSE
+         3       5.3         8.3 FALSE
+         4       5.3         7.3 FALSE
+         5       5.2         6.1 FALSE
+         6       5.1         5.6 FALSE
+         7       4.3         4.6 FALSE
+         8       4.2         4.3 FALSE
+         9       3.4         3.9 FALSE
+        10       3.2         3.7 FALSE
+        11       3.0         3.4 FALSE
+        12       3.0         3.2 FALSE
+ESPRIT periods of the component pairs (yr):
+  pair share_pct    period   modulus
+   1+2      16.6 57.265616 0.9931988
+   3+4      10.7  9.398170 0.9779798
+   5+6      10.3 19.414503 0.9775851
+   7+8       8.5  7.400308 0.9637158
+  9+10       6.6 19.028557 0.9431675
+ 11+12       6.0  6.042114 0.9600199
+
+== D. Knot chain on the monthly series: spline at solar minima minus LOESS(0.25) vs 150 random knot sets ==
+his knots (SILSO minima): rms 0.044 K, dominant period 24.4 yr
+random knots: rms median 0.040 (5-95%: 0.035-0.044), share with larger rms 0.05; dominant period median 24.4 (5-95%: 21.3-25.8); corr with his curve median 0.70
+FFT top-4 periods of his harmonic part (yr): 25.3, 19.6, 22.1, 17.7 
+SSA (L=700), ESPRIT periods (yr) of the pairs of components 1-14, his knots:
+  pair share_pct    period   modulus
+   1+2      68.6  22.37550 0.9996852
+   3+4      25.0  20.57475 0.9995531
+   5+6       3.8  19.78959 0.9996429
+   7+8       1.5  24.70285 1.0032216
+  9+10       0.5       Inf 1.0201700
+ 11+12       0.2  10.82190 0.9963455
+ 13+14       0.1 122.90249 0.9936219
+pairs with modulus 0.97-1.03 (nearly undamped), ordered by variance share: his knots: 22.4, 20.6, 19.8 
+same for 15 random knot sets:
+   24.5, 21.3, 26.2 
+   24.9, 19.6, 28.8 
+   24.1, 19.9, 25.5 
+   23.3, 19.5, 20.2 
+   22.7, 19, 22.3 
+   22.1, 19, 35.1 
+   22.1, 16.5, 42.7 
+   22.2, 18.7, 32.1 
+   24.6, 19.4, 25.5 
+   23.9, 19.5, 21.5 
+   23.3, 24, 24.1 
+   25.3, 19.9, 24.6 
+   22.5, 18.4, 23 
+   25.4, 19.5, 27.8 
+   24.3, 20.2, 41.3 
+
+== D2. Gain of the construction (spline at solar minima minus LOESS 0.25) on pure sinusoids of unit amplitude ==
+      period gain
+ [1,]    120 0.00
+ [2,]     85 0.01
+ [3,]     60 0.03
+ [4,]     40 0.13
+ [5,]     30 0.36
+ [6,]     24 0.56
+ [7,]     22 0.49
+ [8,]     18 0.15
+ [9,]     11 0.05
+[10,]      5 0.02
+
+== C2. SSA of the quadratic-detrended annual series with different window lengths L (the window must exceed the period to resolve it) ==
+  L share_pairs_1_2_pct period_ESPRIT_yr rms_K ML_sinusoid_rms_K
+ 30                18.7             45.5 0.062              0.04
+ 58                16.6             57.3 0.066              0.04
+ 70                16.7             52.5 0.066              0.04
+ 88                16.8             56.4 0.067              0.04
+
+== E. Regression of the annual anomaly on lagged annual sunspot number (AR(1) errors, quadratic trend) ==
+ lag K_per_100ssn     se      p
+   0       0.0050 0.0252 0.8428
+   1       0.0093 0.0250 0.7106
+   2      -0.0272 0.0249 0.2731
+   3      -0.0156 0.0247 0.5294
+   4      -0.0192 0.0249 0.4405
+   5       0.0163 0.0250 0.5152
+   6       0.0180 0.0249 0.4690
+smallest p = 0.273 at lag 2; Bonferroni over 7 lags: 1.000
+Hale-signed sunspot number (22-yr):
+ lag K_per_100ssn     se      p
+   0       0.0148 0.0171 0.3849
+   1       0.0212 0.0167 0.2053
+   2       0.0314 0.0165 0.0563
+   3       0.0317 0.0164 0.0533
+   4       0.0332 0.0165 0.0443
+   5       0.0267 0.0167 0.1095
+   6       0.0135 0.0170 0.4256
+
+== F. Independent proxy records in the region ==
+  at the ERSSTv6 best period 6.8 yr: proxy full record amp 0.16 sd, AIC gain 0.0; proxy 1850+ amp 0.14 sd phase 224 deg; ERSSTv6 same years phase 78 deg (amplitude 0.055 K)
+ region     record     years   n best_period   amp dAIC p_AR1 n_overlap_ERSST
+   WPWP Freund_NWP 1617-2007 391         5.8 0.037  7.6 0.219             158
+ r_highpass_with_ERSST ERSST_best_period proxy_amp_sd_at_ERSST_period
+                 -0.12               6.8                         0.16
+ proxy_dAIC_at_ERSST_period phase_proxy_1850plus_deg phase_ERSST_same_years_deg
+                          0                      224                         78
+null device 
+          1 

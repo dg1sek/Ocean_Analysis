@@ -1,0 +1,2 @@
+"region","record","years","n","best_period","amp","dAIC","p_AR1","n_overlap_ERSST","r_highpass_with_ERSST","ERSST_best_period","proxy_amp_sd_at_ERSST_period","proxy_dAIC_at_ERSST_period","phase_proxy_1850plus_deg","phase_ERSST_same_years_deg"
+"WPWP","Freund_NWP","1617-2007",391,5.8,0.037,7.6,0.219,158,-0.12,6.8,0.16,0,224,78

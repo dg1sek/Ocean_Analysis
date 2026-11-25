@@ -1,0 +1,130 @@
+Region MED - Mediterranean Sea 
+Annual series 1850-2025, n = 176. Periods scanned 4-150 yr.
+
+== A. Maximum-likelihood sinusoid scan (AR(1) errors), AIC gain = n log(RSS0/RSS1) - 6 ==
+AR(1) phi = 0.69; fitted power-law exponent (2-30 yr) = 0.89; 95% of the best AIC gain from noise: AR(1) 9.3, power law 11.4
+ region trend_order rank period_yr amp_K dAIC p_AR1 p_powerlaw
+    MED           1    1      76.6 0.386  9.0 0.065         NA
+    MED           1    2     150.0 0.301  1.8    NA         NA
+    MED           1    3       4.0 0.042 -0.5    NA         NA
+    MED           2    1      73.9 0.303 13.5 0.007      0.017
+    MED           2    2     150.0 0.345  2.6    NA         NA
+    MED           2    3      95.2 0.187  1.2    NA         NA
+    MED           3    1      80.9 0.285 15.6 0.005         NA
+    MED           3    2     104.3 0.336 11.6    NA         NA
+    MED           3    3     134.5 0.637  8.9    NA         NA
+
+== B. Fixed periods: 85 yr (Gleissberg), 40 and 24 yr (Alf's SSA components), 22 yr (Hale), 11 yr ==
+ period trend_order amp_K  se_K dAIC_scan_definition dAIC_ML_phi_refitted
+     85           1 0.333 0.075                  7.5                  9.0
+     85           2 0.250 0.049                  9.0                 12.9
+     85           3 0.286 0.029                 17.2                 39.4
+     40           1 0.036 0.099                 -3.8                 -3.9
+     40           2 0.038 0.068                 -3.7                 -3.7
+     40           3 0.034 0.058                 -3.7                 -3.7
+     24           1 0.069 0.076                 -3.0                 -3.2
+     24           2 0.058 0.058                 -2.9                 -3.0
+     24           3 0.064 0.051                 -2.5                 -2.4
+     22           1 0.087 0.072                 -2.5                 -2.5
+     22           2 0.064 0.057                 -2.7                 -2.7
+     22           3 0.075 0.050                 -1.8                 -1.8
+     11           1 0.027 0.042                 -3.5                 -3.6
+     11           2 0.028 0.039                 -3.5                 -3.5
+     11           3 0.024 0.037                 -3.6                 -3.6
+
+== C. FFT (4 strongest components of the quadratic-detrended annual series) and SSA (annual, L = N/3) ==
+FFT top-4 periods (yr): 88, 58.7, 29.3, 44 ; amplitudes (K): 0.205, 0.131, 0.108, 0.1 ; share of variance of the sum: 0.49 
+ component share_pct AR1_q95_pct above
+         1      29.4        22.0  TRUE
+         2      24.7        17.1  TRUE
+         3       4.3        11.9 FALSE
+         4       3.9         9.9 FALSE
+         5       2.1         7.3 FALSE
+         6       1.9         6.4 FALSE
+         7       1.8         5.5 FALSE
+         8       1.8         4.9 FALSE
+         9       1.7         4.2 FALSE
+        10       1.5         3.8 FALSE
+        11       1.5         3.3 FALSE
+        12       1.3         2.9 FALSE
+ESPRIT periods of the component pairs (yr):
+  pair share_pct    period   modulus
+   1+2      54.1 78.764574 1.0071374
+   3+4       8.2 26.548201 0.9871982
+   5+6       4.0 98.804131 0.9069997
+   7+8       3.6  8.867603 0.5052960
+  9+10       3.2       Inf 0.6313298
+ 11+12       2.7       Inf 0.6957503
+
+== D. Knot chain on the monthly series: spline at solar minima minus LOESS(0.25) vs 150 random knot sets ==
+his knots (SILSO minima): rms 0.059 K, dominant period 22.8 yr
+random knots: rms median 0.056 (5-95%: 0.050-0.061), share with larger rms 0.22; dominant period median 22.8 (5-95%: 19.5-25.8); corr with his curve median 0.72
+FFT top-4 periods of his harmonic part (yr): 22.1, 19.6, 29.5, 25.3 
+SSA (L=700), ESPRIT periods (yr) of the pairs of components 1-14, his knots:
+  pair share_pct    period   modulus
+   1+2      66.4 22.057031 0.9997900
+   3+4      27.3 22.027029 0.9985015
+   5+6       4.7 28.355831 1.0003764
+   7+8       0.8 20.811875 0.9767298
+  9+10       0.3  9.741686 1.0002608
+ 11+12       0.2       Inf 0.9985451
+ 13+14       0.1 33.412189 0.9989617
+pairs with modulus 0.97-1.03 (nearly undamped), ordered by variance share: his knots: 22.1, 22, 28.4 
+same for 15 random knot sets:
+   24.2, 24.3, 26.5 
+   24.4, 19.9, 30.5 
+   23.8, 21.3, 27.5 
+   23.4, 30.7, 18.8 
+   23.1, 31.7, 19.8 
+   22.7, 30, 26.6 
+   22.1, 29.5, 26.3 
+   22.5, 29.1, 28.3 
+   23.8, 19.3, 30.1 
+   22.9, 21.9, 30.8 
+   23.2, 32.2, 24.1 
+   25, 19.7, 36.5 
+   22.8, 31.6, 23.6 
+   25.2, 17.8, 35.2 
+   23.3, 23.6, 32.4 
+
+== D2. Gain of the construction (spline at solar minima minus LOESS 0.25) on pure sinusoids of unit amplitude ==
+      period gain
+ [1,]    120 0.00
+ [2,]     85 0.01
+ [3,]     60 0.03
+ [4,]     40 0.13
+ [5,]     30 0.36
+ [6,]     24 0.56
+ [7,]     22 0.49
+ [8,]     18 0.15
+ [9,]     11 0.05
+[10,]      5 0.02
+
+== C2. SSA of the quadratic-detrended annual series with different window lengths L (the window must exceed the period to resolve it) ==
+  L share_pairs_1_2_pct period_ESPRIT_yr rms_K ML_sinusoid_rms_K
+ 30                57.8             80.0 0.211             0.214
+ 58                54.1             78.8 0.209             0.214
+ 70                53.5             80.2 0.205             0.214
+ 88                53.8             82.4 0.207             0.214
+
+== E. Regression of the annual anomaly on lagged annual sunspot number (AR(1) errors, quadratic trend) ==
+ lag K_per_100ssn     se      p
+   0       0.0213 0.0408 0.6019
+   1       0.0247 0.0405 0.5424
+   2      -0.0507 0.0402 0.2075
+   3      -0.0342 0.0404 0.3983
+   4      -0.0006 0.0409 0.9893
+   5      -0.0409 0.0403 0.3107
+   6       0.0012 0.0404 0.9757
+smallest p = 0.208 at lag 2; Bonferroni over 7 lags: 1.000
+Hale-signed sunspot number (22-yr):
+ lag K_per_100ssn     se      p
+   0       0.0463 0.0332 0.1633
+   1       0.0258 0.0332 0.4379
+   2       0.0485 0.0329 0.1403
+   3       0.0177 0.0335 0.5967
+   4       0.0303 0.0333 0.3626
+   5       0.0274 0.0334 0.4121
+   6       0.0139 0.0334 0.6768
+null device 
+          1 
