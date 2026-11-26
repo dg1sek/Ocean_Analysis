@@ -24,6 +24,7 @@ The work was done jointly with Claude (Anthropic) and is meant as a transparent 
 |---|---|---|
 | [`coral_test/`](coral_test/) | Is the ~20-yr line in global SST paced by an external clock (lunar nodal 18.6 yr, solar Hale cycle ~22 yr) or is it internal variability? A thermometer record of 176 yr cannot separate these; coral records of several centuries can. | Loads coral Sr/Ca and δ18O records (NOAA NCEI Paleoclimatology), fits the ~20-yr line in sliding windows and checks whether period and phase stay fixed. Figures: spectra, wavelet, sliding period/phase. |
 | [`regional_test/`](regional_test/) | Does a *regional* analysis (Mediterranean and others, where sun angle and noise differ) confirm or weaken the global findings? | Screens 12 candidate regions by criteria fixed beforehand, then runs Alf's methods (ML sinusoid scan with AIC, SSA, FFT with 4 components, spline-at-solar-minima chain, sunspot regression, proxy check) for three regions: Mediterranean, Gulf of Mexico, western Pacific warm pool. |
+| [`thermostat_test/`](thermostat_test/) | Is there a warm-water ceiling ("tropical thermostat") in tropical SST? Six-step plan; steps 0-1 done. | Per-cell ERSSTv6 test with pre-registered decision rule: warming rate against starting SST, upper-tail quantiles, area above 27-30 C. |
 
 Each folder has its own `README.md` (what was done, how to re-run) and a results file with all numbers
 (`coral_test/manuscript_section.md`, `regional_test/RESULTS.md`).
