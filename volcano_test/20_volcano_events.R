@@ -2,8 +2,8 @@
 # Run from this folder: Rscript 20_volcano_events.R
 set.seed(20261127); dir.create("out", showWarnings = FALSE)
 fe <- function(...) { p <- c(...); p[file.exists(p)][1] }
-GS  <- fe("../followup/output/global_series.csv"); RG <- fe("../regional/out/regional_monthly_ersst.csv")
-NINO <- fe("../research/D1/data/nino34.long.anom.data"); AOD <- fe("../research/D1/data/ar6_volcanic_sAOD_monthly_-50001-201912.csv")
+GS  <- fe("data/global_series.csv", "../followup/output/global_series.csv"); RG <- fe("data/regional_monthly_ersst.csv", "../regional/out/regional_monthly_ersst.csv")
+NINO <- fe("data/nino34.long.anom.data", "../research/D1/data/nino34.long.anom.data"); AOD <- fe("data/ar6_volcanic_sAOD_monthly_1850-2019.csv", "../research/D1/data/ar6_volcanic_sAOD_monthly_-50001-201912.csv")
 stopifnot(!anyNA(c(GS, RG, NINO, AOD)))
 t0 <- 1870; t1 <- 2019; idx <- function(y, m) (y - 1870) * 12 + m            # month index, 1 = Jan 1870
 nm <- idx(t1, 12); yr <- 1870 + (0:(nm - 1)) %/% 12; tt <- 1870 + (0:(nm - 1)) / 12

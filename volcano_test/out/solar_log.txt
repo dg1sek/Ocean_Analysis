@@ -1,0 +1,27 @@
+TSI series: 1610 2025 n = 416  mean 1361.47  range 1361.07 - 1362.56 
+NOAA_TSI_1610_2025         best 60-120 yr: period 110, amplitude 0.109 W/m2 TSI (R2 0.26); best of 50-150: 110 yr, 0.109; series sd 0.332
+NOAA_TSI_1749_2025         best 60-120 yr: period 90, amplitude 0.134 W/m2 TSI (R2 0.12); best of 50-150: 90 yr, 0.134; series sd 0.320
+NOAA_TSI_1850_2025         best 60-120 yr: period 94, amplitude 0.109 W/m2 TSI (R2 0.08); best of 50-150: 94 yr, 0.109; series sd 0.336
+AR6_solar_ERF_1750_2019    best 60-120 yr: period 98, amplitude 0.017 W/m2 ERF (R2 0.09); best of 50-150: 150 yr, 0.019; series sd 0.049
+
+ERF amplitude of the 60-120 yr line: 0.023 W/m2 (from NOAA TSI x 0.175), 0.017 W/m2 (AR6 solar ERF series)
+        response K_per_Wm2 SST_amp_from_TSI SST_amp_from_AR6
+   fast_14months     0.110          0.00258          0.00186
+   transient_TCR     0.458          0.01076          0.00773
+ equilibrium_ECS     0.763          0.01793          0.01288
+
+Observed 74-80 yr line: Mediterranean 0.23-0.30 K, Gulf of Mexico 0.23 K (ERSSTv6 annual, 1850-2025).
+ERF amplitude needed to produce 0.23-0.30 K at equilibrium response (0.76 K per W/m2): 0.30-0.39 W/m2, i.e. 17.9-23.3 times the solar ERF amplitude above (AR6 series)
+
+Energy view: sinusoidal forcing of amplitude F (W/m2 of ocean area), period P, absorbed by a mixed layer of depth h with NO radiative damping (upper bound for the response):
+  T amplitude = F / (rho cp h w),  w = 2 pi / P
+   h  P F_needed_for_0.3K T_from_solar_ERF_0.017 ratio_needed_over_solar
+  50 11             1.113                0.00458                    65.5
+  75 11             1.670                0.00305                    98.2
+ 100 11             2.226                0.00229                   131.0
+ 200 11             4.452                0.00115                   261.9
+  50 80             0.153                0.03332                     9.0
+  75 80             0.230                0.02222                    13.5
+ 100 80             0.306                0.01666                    18.0
+ 200 80             0.612                0.00833                    36.0
+Heat content of 0.3 K in a 75 m layer over the global ocean: 3.3e+22 J; solar ERF amplitude 0.017 W/m2 over a half cycle of 40 yr over the same area delivers at most 7.8e+21 J (everything absorbed, nothing lost)
