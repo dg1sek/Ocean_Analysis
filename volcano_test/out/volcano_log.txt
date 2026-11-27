@@ -1,0 +1,33 @@
+sAOD peak after each event (AR6 monthly, anomaly from median):
+  Krakatau     0.126
+  Santa Maria  0.072
+  Novarupta    0.063
+  Agung        0.079
+  El Chichon   0.061
+  Pinatubo     0.110
+
+== GLOBAL: peak -0.139 K at month 11, recovery 23 months; leave-one-out peak -0.182 to -0.128; placebo p = 0.002; placebo median peak -0.042; per event peak: Krakatau -0.17, Santa Maria -0.24, Novarupta 0.01, Agung -0.24, El Chichon -0.15, Pinatubo -0.28
+
+== MED: peak -0.469 K at month 26, recovery 5 months; leave-one-out peak -0.499 to -0.449; placebo p = 0.011; placebo median peak -0.241; per event peak: Krakatau -0.78, Santa Maria -0.88, Novarupta -0.70, Agung -0.58, El Chichon -0.70, Pinatubo -0.89
+
+== GOM: peak -0.431 K at month 11, recovery 5 months; leave-one-out peak -0.459 to -0.420; placebo p = 0.045; placebo median peak -0.235; per event peak: Krakatau -1.12, Santa Maria -0.77, Novarupta -0.43, Agung -0.66, El Chichon -0.74, Pinatubo -0.66
+
+== WPWP: peak -0.295 K at month 27, recovery 6 months; leave-one-out peak -0.368 to -0.254; placebo p = 0.015; placebo median peak -0.132; per event peak: Krakatau -0.48, Santa Maria -0.78, Novarupta -0.12, Agung -0.67, El Chichon -0.53, Pinatubo -0.61
+
+== NATL_SUBTROP: peak -0.248 K at month 12, recovery 4 months; leave-one-out peak -0.337 to -0.169; placebo p = 0.050; placebo median peak -0.121; per event peak: Krakatau -0.40, Santa Maria -0.71, Novarupta 0.03, Agung -0.91, El Chichon -0.27, Pinatubo -0.56
+GLOBAL: tau = 14 months (95% 7-28), gain -2.25 K per sAOD unit (about 0.112 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.73, AIC gain vs no response 37.4
+MED: tau = 86 months (95% 1-180), gain -6.95 K per sAOD unit (about 0.347 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.49, AIC gain vs no response 10.0
+GOM: tau = 34 months (95% 12-108), gain -6.19 K per sAOD unit (about 0.309 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.46, AIC gain vs no response 13.7
+WPWP: tau = 9 months (95% 4-18), gain -3.71 K per sAOD unit (about 0.186 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.58, AIC gain vs no response 26.1
+NATL_SUBTROP: tau = 70 months (95% 30-180), gain -6.30 K per sAOD unit (about 0.315 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.58, AIC gain vs no response 14.9
+
+Two-timescale variant (fast + slow exponential, same sAOD input, AR(1) pre-whitened with the one-box phi):
+GLOBAL: best fast 12 / slow 300 months (gains -1.95 / -0.94 K per sAOD unit), AIC(two) - AIC(one) = 1.2 (negative = two-timescale preferred)
+MED: best fast 1 / slow 120 months (gains -2.01 / -5.38 K per sAOD unit), AIC(two) - AIC(one) = -2.1 (negative = two-timescale preferred)
+GOM: best fast 2 / slow 36 months (gains 0.19 / -6.49 K per sAOD unit), AIC(two) - AIC(one) = 2.0 (negative = two-timescale preferred)
+WPWP: best fast 12 / slow 36 months (gains -5.69 / 2.66 K per sAOD unit), AIC(two) - AIC(one) = 1.0 (negative = two-timescale preferred)
+NATL_SUBTROP: best fast 18 / slow 36 months (gains 7.30 / -13.36 K per sAOD unit), AIC(two) - AIC(one) = -0.4 (negative = two-timescale preferred)
+null device 
+          1 
+
+Done.

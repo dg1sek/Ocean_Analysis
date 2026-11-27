@@ -1,0 +1,18 @@
+# Volcano event study: pre-registered design (written 2026-11-27 before any result was computed)
+
+Question: how fast and how strongly does sea surface temperature respond to a known, short, external cooling pulse, and how fast does it recover? (Ocean "inertia" of the upper layer; needed to calibrate the solar and aerosol tests.)
+
+Series (monthly SST anomalies, ERSSTv6): global mean (followup/output/global_series.csv, column ersst); regional means MED, GOM, WPWP, NATL_SUBTROP (analysis/regional/out/regional_monthly_ersst.csv). Period 1870-2019 (Nino3.4 starts 1870, AR6 volcanic aerosol ends 2019).
+Events: Krakatau 1883-08, Santa Maria 1902-10, Novarupta 1912-06, Agung 1963-03, El Chichon 1982-04, Pinatubo 1991-06 (the six eruptions with clear stratospheric aerosol in the AR6 monthly record inside the period). Fixed now; none dropped after looking.
+Preprocessing: (1) slow variation removed with LOESS (span 0.3, degree 1) fitted with the windows -12..+72 months around each eruption masked, so the smoother cannot absorb the response; (2) ENSO removed by regression on HadISST Nino3.4 anomaly at lag 3 months, coefficient estimated on unmasked months.
+A. Composite (superposed epoch): baseline = mean of months -36..-7; curve months -12..+60. Metrics for the 6-event mean: peak cooling (minimum of the 3-month running mean in months 0..48), month of the minimum, recovery time = months from the minimum until the curve has recovered to 1/e of the peak. Uncertainty: leave-one-event-out range, and a placebo test: 2000 random sets of 6 non-eruption dates (months at least 6 yr from any eruption), same metrics; p = share of placebo composites with a peak cooling at least as deep.
+B. Response model: T(t) = g * [sAOD'(t) convolved with exp(-s/tau)] (one-box), sAOD' = monthly stratospheric AOD (AR6) minus its median; g and tau fitted by least squares on the preprocessed series (tau grid 1..180 months), 95 % interval from the profile with an effective sample size from the residual AR(1); a two-timescale variant (fast tau1 <= 24, slow tau2 up to 600 months) is compared by AIC and reported; if the slow term is not identified it is said so.
+Reading rule: a cooling is "detected" if the placebo p < 0.05 for that series. Time constants are reported with intervals, nothing is claimed beyond the interval.
+Known limits (stated beforehand): six events, each noisy; El Chichon and Pinatubo coincide with El Nino years (ENSO removal imperfect); Krakatau falls in the period where ERSSTv6 is partly statistically filled; pre-1979 eruption strengths are uncertain; short events constrain the fast upper-ocean response, not the multidecadal deep-ocean inertia.
+
+## Amendment (2026-11-27, after the first run, before the final numbers)
+The first run showed ~12-month waves in the regional composites: a residual seasonal cycle (the regional anomalies are taken against the 1991-2020 climatology; earlier decades have a slightly
+different seasonal cycle), which does not average out for six eruptions in fixed calendar months, while the placebo drew random months and was therefore too lenient. Two changes, both made after
+seeing that figure and before any final number: (i) after trend and ENSO removal, the calendar-month means of the unmasked months are subtracted; (ii) placebo dates are drawn with the SAME calendar
+month as the matching eruption. The one-box fit was also corrected (a mistake in the convolution direction gave absurd gains in the first run; the first-run B numbers are void) and AR(1) is handled by pre-whitening.
+The first-run composite numbers are kept in out/volcano_log_firstrun.txt for the record.
