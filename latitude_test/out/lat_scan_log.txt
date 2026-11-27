@@ -1,0 +1,9 @@
+60-40S  n=176  best 94.5 yr, 0.11 K, AIC gain 1.2 (null 95% 7.8, p = 0.907); best in 60-100 yr: 94.5 yr, 0.11 K, gain 1.2
+40-20S  n=176  best 9.0 yr, 0.03 K, AIC gain 1.7 (null 95% 7.9, p = 0.813); best in 60-100 yr: 60.0 yr, 0.05 K, gain -3.0
+20S-0   n=176  best 53.5 yr, 0.07 K, AIC gain -0.1 (null 95% 7.7, p = 0.973); best in 60-100 yr: 60.0 yr, 0.06 K, gain -1.4
+0-20N   n=176  best 12.5 yr, 0.06 K, AIC gain -0.4 (null 95% 7.7, p = 0.993); best in 60-100 yr: 69.5 yr, 0.06 K, gain -1.9
+20-40N  n=176  best 78.0 yr, 0.20 K, AIC gain 8.6 (null 95% 7.8, p = 0.033); best in 60-100 yr: 78.0 yr, 0.20 K, gain 8.6
+40-60N  n=176  best 74.0 yr, 0.24 K, AIC gain 9.9 (null 95% 7.8, p = 0.013); best in 60-100 yr: 74.0 yr, 0.24 K, gain 9.9
+null device 
+          1 
+Done.

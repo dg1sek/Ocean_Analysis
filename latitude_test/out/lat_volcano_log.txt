@@ -1,0 +1,37 @@
+sAOD peak after each event (AR6 monthly, anomaly from median):
+  Krakatau     0.126
+  Santa Maria  0.072
+  Novarupta    0.063
+  Agung        0.079
+  El Chichon   0.061
+  Pinatubo     0.110
+
+== 60-40S: peak -0.064 K at month 48, recovery 9 months; leave-one-out peak -0.115 to -0.049; placebo p = 0.393; placebo median peak -0.055; per event peak: Krakatau -0.29, Santa Maria -0.12, Novarupta 0.06, Agung -0.28, El Chichon -0.15, Pinatubo -0.19
+
+== 40-20S: peak -0.175 K at month 24, recovery 26 months; leave-one-out peak -0.247 to -0.139; placebo p = 0.013; placebo median peak -0.066; per event peak: Krakatau -0.37, Santa Maria -0.22, Novarupta 0.03, Agung -0.44, El Chichon -0.29, Pinatubo -0.29
+
+== 20S-0: peak -0.173 K at month 15, recovery 6 months; leave-one-out peak -0.259 to -0.120; placebo p = 0.053; placebo median peak -0.092; per event peak: Krakatau -0.39, Santa Maria -0.55, Novarupta 0.06, Agung -0.37, El Chichon -0.06, Pinatubo -0.41
+
+== 0-20N: peak -0.229 K at month 11, recovery 12 months; leave-one-out peak -0.256 to -0.200; placebo p = 0.005; placebo median peak -0.090; per event peak: Krakatau -0.26, Santa Maria -0.31, Novarupta -0.13, Agung -0.28, El Chichon -0.36, Pinatubo -0.42
+
+== 20-40N: peak -0.207 K at month 12, recovery 28 months; leave-one-out peak -0.244 to -0.172; placebo p = 0.000; placebo median peak -0.068; per event peak: Krakatau -0.35, Santa Maria -0.39, Novarupta -0.12, Agung -0.31, El Chichon -0.27, Pinatubo -0.44
+
+== 40-60N: peak -0.305 K at month 13, recovery 7 months; leave-one-out peak -0.368 to -0.237; placebo p = 0.001; placebo median peak -0.120; per event peak: Krakatau -0.24, Santa Maria -0.89, Novarupta -0.58, Agung -0.49, El Chichon -0.47, Pinatubo -0.61
+60-40S: tau = 16 months (95% 1-180), gain -0.30 K per sAOD unit (about 0.015 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.59, AIC gain vs no response -3.4
+40-20S: tau = 19 months (95% 13-28), gain -4.14 K per sAOD unit (about 0.207 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.52, AIC gain vs no response 93.2
+20S-0: tau = 13 months (95% 2-38), gain -2.48 K per sAOD unit (about 0.124 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.68, AIC gain vs no response 11.9
+0-20N: tau = 5 months (95% 1-17), gain -1.65 K per sAOD unit (about 0.083 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.66, AIC gain vs no response 8.4
+20-40N: tau = 20 months (95% 11-38), gain -4.05 K per sAOD unit (about 0.203 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.61, AIC gain vs no response 59.9
+40-60N: tau = 10 months (95% 1-180), gain -2.72 K per sAOD unit (about 0.136 K per W/m2 with ERF = -20 x sAOD), AR(1) 0.66, AIC gain vs no response 8.8
+
+Two-timescale variant (fast + slow exponential, same sAOD input, AR(1) pre-whitened with the one-box phi):
+60-40S: best fast 24 / slow 90 months (gains -1.47 / 1.95 K per sAOD unit), AIC(two) - AIC(one) = -0.6 (negative = two-timescale preferred)
+40-20S: best fast 24 / slow 90 months (gains -6.09 / 2.85 K per sAOD unit), AIC(two) - AIC(one) = -2.3 (negative = two-timescale preferred)
+20S-0: best fast 9 / slow 600 months (gains -1.98 / -2.21 K per sAOD unit), AIC(two) - AIC(one) = 1.1 (negative = two-timescale preferred)
+0-20N: best fast 9 / slow 36 months (gains -2.77 / 1.70 K per sAOD unit), AIC(two) - AIC(one) = 1.3 (negative = two-timescale preferred)
+20-40N: best fast 12 / slow 180 months (gains -2.67 / -2.80 K per sAOD unit), AIC(two) - AIC(one) = -1.6 (negative = two-timescale preferred)
+40-60N: best fast 9 / slow 300 months (gains -2.03 / -3.24 K per sAOD unit), AIC(two) - AIC(one) = -0.3 (negative = two-timescale preferred)
+null device 
+          1 
+
+Done.
