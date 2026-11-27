@@ -1,0 +1,2 @@
+# the repository root ignores every folder called data/; the small input series of this folder are meant to be tracked
+!data/
