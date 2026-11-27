@@ -1,13 +1,13 @@
 # thermostat_test: is there a warm-water ceiling ("tropical thermostat") in the SST data?
 
-Status 2026-11-26: steps 0 and 1 of a six-step plan are done.
+Status 2026-11-27: steps 0 to 3 of a six-step plan are done (results of steps 2-3 in `RESULTS_step2_3.md`); steps 4-6 proposed.
 
 | Step | What | Status |
 |---|---|---|
 | 0 | literature: what does the thermostat idea claim, who disputes it | done (summary in the email to Alf) |
 | 1 | ERSSTv6 per-cell check: does warming slow where the water is already warmest? | done, `10_step1_percell.R`, `out/` |
-| 2 | repeat with independent SST products (HadSST4 unfilled, OISST 1982+) | proposed |
-| 3 | surface-flux data (CERES cloud effect, ERA5/OAFlux latent heat): sign of the feedback above a threshold | proposed |
+| 2 | repeat with independent SST products (HadSST4 unfilled, OISST 1982+) | done, `11_step2_products.R`; see `RESULTS_step2_3.md` |
+| 3 | relative SST (3a) and surface-flux feedback (3b) | 3a: no separate test (equivalent to uniform warming); 3b done with NCEP/NCAR R1 fluxes, `12_step3_flux.R` |
 | 4 | small regional energy-balance model with a threshold loss term T*; is T* identifiable? | proposed |
 | 5 | put it into the long-term (forcing-driven) model in place of the logistic ceiling | proposed |
 | 6 | report | |

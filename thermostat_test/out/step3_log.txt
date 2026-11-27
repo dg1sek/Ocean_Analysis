@@ -1,0 +1,30 @@
+NCEP R1 grid 192 x 94, months 1948-01-01 to 2026-02-01
+months used: 528 
+cells: cool(<26C) 1850; mid(26-28C) 1480; warm(>=28C) 1338 
+Sanity: mean Q over valid tropical ocean cells 6.2 W/m2 (SW 200.1, LW -55.5, LH 125.3, SH 13.1)
+
+Pooled slope of the flux anomaly (heating of the ocean, W/m2) on the SST anomaly (K), detrended monthly anomalies, 1982-2025;
+block bootstrap (3-yr blocks, 1000) 95 % intervals. Negative = damping of SST anomalies.
+ flux       group slope_W_m2_per_K     lo      hi
+    Q warm(>=28C)          -1.2370 -3.201  0.3185
+    Q mid(26-28C)          -2.9438 -4.738 -0.6382
+    Q  cool(<26C)          -1.2485 -3.092  1.0405
+    Q warm - cool           0.0115 -2.525  1.9109
+   SW warm(>=28C)          -5.5367 -6.075 -4.9541
+   SW mid(26-28C)          -4.8305 -5.463 -4.0658
+   SW  cool(<26C)           0.1972 -0.447  0.9632
+   SW warm - cool          -5.7338 -6.754 -4.8658
+   LH warm(>=28C)           2.4851  0.824  3.7826
+   LH mid(26-28C)          -0.2748 -1.484  1.2352
+   LH  cool(<26C)          -1.8883 -3.006 -0.4302
+   LH warm - cool           4.3734  2.512  5.6430
+   LW warm(>=28C)           1.7001  1.304  2.0210
+   LW mid(26-28C)           1.8621  1.520  2.1055
+   LW  cool(<26C)          -0.0792 -0.323  0.1144
+   LW warm - cool           1.7792  1.335  2.1930
+   SH warm(>=28C)           0.1145 -0.244  0.5025
+   SH mid(26-28C)           0.2994 -0.020  0.6664
+   SH  cool(<26C)           0.5218  0.197  0.9281
+   SH warm - cool          -0.4074 -0.824 -0.0703
+
+Done.
