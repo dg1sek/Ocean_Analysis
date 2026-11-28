@@ -35,3 +35,21 @@ Alf's expectation is confirmed: with L = N/3 the components 1-3 are strongly cor
 The first component carries 83-84 % (MED) and 92-94 % (global) in all windows; components 2 and 3 carry only 3-8 %.
 **Not usable:** the column `pair_60_100` in the output is an artefact. For L >= 60 my period estimator gives the window length itself for the slow trend components (88,88,88,88 and 80,80,80,80), so "TRUE" does not mean an oscillatory pair of 60-100 yr was found. No oscillatory pair of that length is shown by this diagnostic.
 A pair near 20-22 yr appears in most MED windows (L = 88, 60, 44, 40, 80); the periods come from the FFT of the eigenvectors and are coarse. I draw no conclusion from it.
+
+## A2. Forecast test with a Richards trend (run 2026-11-28; PREREG_oos2_richards.md, `72_oos_richards.R`, `out/oos_richards_skill.csv`)
+K fixed at 8, B from the logistic step, 100 surrogates per case.
+
+| series | cut-off | RMSE of Richards-only forecast (K) | period (yr) | skill | null 95% | p |
+|---|---|---|---|---|---|---|
+| GLOBAL | 1950 | 5.4 | 88 | 1.00 | 0.88 | 0.00 |
+| GLOBAL | 1975 | 0.61 | 88 | -16.5 | 0.96 | 0.98 |
+| GLOBAL | 2000 | 0.31 | 97 | -4.3 | 0.76 | 0.95 |
+| MED | 1950 | 5.4 | 70 | 0.03 | 0.85 | 0.39 |
+| MED | 1975 | 0.31 | 75 | 0.64 | 0.98 | 0.14 |
+| MED | 2000 | 0.57 | 74 | 0.88 | 0.65 | 0.02 |
+| GOM | 1950 | 6.4 | 98 | 1.00 | 0.84 | 0.00 |
+| GOM | 1975 | not fittable | | | | |
+| GOM | 2000 | 6.7 | 84 | 0.95 | 0.45 | 0.00 |
+
+Literal application of the pre-registered rule: "met" for GOM only. **This verdict is an artefact and must not be used.** For the 1950 cut-offs and for GOM 2000 the Richards-only forecast is absurd (RMSE 5-7 K): trained on data before the steep rise, the curve explodes, so any added term "improves" it (skill close to 1). The test is only informative where the baseline forecast is sane: GLOBAL 1975/2000 (harmonic worse, skill -16 and -4) and MED 1975/2000 (harmonic better: skill 0.64 with p = 0.14, and 0.88 with p = 0.02).
+Reading: with a trend that fits the Mediterranean properly, the harmonic is not rejected there (positive at both usable cut-offs, significant at one), whereas the quadratic baseline gave a strongly negative result for 1975. It does not help globally. Evidence for the Mediterranean line from forecasting stays modest: two usable cut-offs, one significant.
