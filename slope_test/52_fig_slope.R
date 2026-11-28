@@ -1,7 +1,7 @@
 # 52_fig_slope.R -- figure: series with quadratic trend + sinusoid, and the slope split into trend and sinusoid parts (extended to 2060 for MED/GOM).
 source("R/alf_tools.R")
 rg <- read.csv("data/regional_monthly_ersst.csv"); gl <- read.csv("data/global_series.csv")
-ann <- function(df, col) tapply(df[[col]], df$year, mean)
+ann <- function(df, col) { d <- df[df$year <= 2025, ]; tapply(d[[col]], d$year, mean) }   # complete years only (2026 has 10 months)
 S <- list(Global = ann(gl, "ersst"), `Mittelmeer (MED)` = ann(rg, "MED"), `Golf von Mexiko (GOM)` = ann(rg, "GOM"))
 png("out/slope_fig.png", 2400, 1500, res = 200); par(mfcol = c(2, 3), mar = c(4, 4.2, 2.5, 1), cex = 0.9, cex.main = 0.95)
 for (nm in names(S)) {

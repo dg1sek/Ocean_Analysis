@@ -1,7 +1,7 @@
 # 50_slope.R -- slope analysis (see PREREG_slope.md). Run from this folder: Rscript 50_slope.R
 source("R/alf_tools.R"); set.seed(2026)
 rg <- read.csv("data/regional_monthly_ersst.csv"); gl <- read.csv("data/global_series.csv")
-ann <- function(df, col) tapply(df[[col]], df$year, mean)
+ann <- function(df, col) { d <- df[df$year <= 2025, ]; tapply(d[[col]], d$year, mean) }   # complete years only (2026 has 10 months)
 S <- list(GLOBAL = ann(gl, "ersst"), MED = ann(rg, "MED"), GOM = ann(rg, "GOM"), WPWP = ann(rg, "WPWP"))
 periods <- 60:100; NB <- 500; BL <- 5
 

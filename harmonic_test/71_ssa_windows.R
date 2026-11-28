@@ -1,7 +1,7 @@
 # 71_ssa_windows.R -- SSA window length diagnostic (PREREG_oos_ssa.md, part B). Run: Rscript 71_ssa_windows.R
 suppressMessages(library(Rssa))
 rg <- read.csv("data/regional_monthly_ersst.csv"); gl <- read.csv("data/global_series.csv")
-ann <- function(df, col) tapply(df[[col]], df$year, mean)
+ann <- function(df, col) { d <- df[df$year <= 2025, ]; tapply(d[[col]], d$year, mean) }   # complete years only (2026 has 10 months)
 S <- list(GLOBAL = ann(gl, "ersst"), MED = ann(rg, "MED")); N <- 176; Ls <- c(N/2, floor(N/3), N/4, 40, 60, 80)
 per_of <- function(v) { f <- Mod(fft(v - mean(v)))[2:(length(v) %/% 2)]; k <- which.max(f); length(v) / k }
 out <- list()

@@ -1,7 +1,7 @@
 # 51_sinus_phase.R -- extra check (labelled as such, after seeing 50_slope.R): where is the fitted sinusoid in its cycle now?
 source("R/alf_tools.R")
 rg <- read.csv("data/regional_monthly_ersst.csv"); gl <- read.csv("data/global_series.csv")
-ann <- function(df, col) tapply(df[[col]], df$year, mean)
+ann <- function(df, col) { d <- df[df$year <= 2025, ]; tapply(d[[col]], d$year, mean) }   # complete years only (2026 has 10 months)
 S <- list(GLOBAL = ann(gl, "ersst"), MED = ann(rg, "MED"), GOM = ann(rg, "GOM"))
 g <- expand.grid(nm = names(S), from = c(1850, 1900), stringsAsFactors = FALSE)
 res <- do.call(rbind, lapply(seq_len(nrow(g)), function(i) { nm <- g$nm[i]; from <- g$from[i]

@@ -1,7 +1,7 @@
 # 70_oos_forecast.R -- out-of-sample test of the harmonic (PREREG_oos_ssa.md, part A). Run: Rscript 70_oos_forecast.R
 source("R/alf_tools.R"); set.seed(2026)
 rg <- read.csv("data/regional_monthly_ersst.csv"); gl <- read.csv("data/global_series.csv")
-ann <- function(df, col) tapply(df[[col]], df$year, mean)
+ann <- function(df, col) { d <- df[df$year <= 2025, ]; tapply(d[[col]], d$year, mean) }   # complete years only (2026 has 10 months)
 S <- list(GLOBAL = ann(gl, "ersst"), MED = ann(rg, "MED"), GOM = ann(rg, "GOM")); cuts <- c(1950, 1975, 2000); NS <- 300
 design <- function(t, P = NULL) { x <- (t - 1988) / 100; cbind(1, x, x^2, if (!is.null(P)) cbind(sin(2*pi*t/P), cos(2*pi*t/P))) }
 pwfit <- function(X, y, phi) { n <- length(y); pw <- function(M) rbind(M[1, , drop = FALSE]*sqrt(1-phi^2), M[-1, , drop = FALSE] - phi*M[-n, , drop = FALSE]); lm.fit(pw(X), pw(matrix(y)))$coefficients }

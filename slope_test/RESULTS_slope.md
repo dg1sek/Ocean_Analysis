@@ -28,10 +28,10 @@ the regional curve looks steep or flat in a given 30-yr window; it is not a smal
 ## Extra check (made after seeing Q1-Q3): where is the sinusoid now?
 | series | fit period | last maximum | sinusoid slope 2025 (K/decade) |
 |---|---|---|---|
-| MED, 1850-2025 | 75 yr | 2023 | -0.04 |
-| MED, 1900-2025 | 88 yr | 2034 | +0.16 |
+| MED, 1850-2025 | 74 yr | 2022 | -0.07 |
+| MED, 1900-2025 | 85 yr | 2031 | +0.12 |
 | GOM, 1850-2025 | 80 yr | 2029 | +0.06 |
-| GOM, 1900-2025 | 98 yr | 2046 | +0.19 |
+| GOM, 1900-2025 | 100 yr | 2048 | +0.19 |
 The phase moves by 10-20 yr between the two fit periods, so "now" is uncertain.
 If the line is real and the 1850 fit is right, MED is at its maximum now and its slope should fall by about 0.26 K/decade
 amplitude over the next decades, which would cancel most of the trend slope (0.16): a plateau or slight decline in MED between about 2025 and 2060.
@@ -41,3 +41,5 @@ This is a **testable prediction, not a result**; the 1900 fit says the maximum i
 1. No sign of a slowing trend in global, MED, GOM or WPWP: the opposite (acceleration), as expected under a rising forcing.
 2. The slope of the regional series is dominated by the sinusoid, not by the trend. An apparent "flattening" in MED would be the line, not a ceiling.
 3. Limits: one sinusoid plus quadratic is Alf's model, not a test of it; ERSST is statistically filled before about 1900; not compared with forcing (W2 does that globally).
+
+**Correction 2026-11-28:** `51_sinus_phase.R` and the figure script `52_fig_slope.R` had used a partial year 2026 (January-October) as an extra annual value; the table above is the corrected one (complete years only). Q1-Q3 (`50_slope.R`) were never affected because that script cuts at 2025. The qualitative reading is unchanged: for the 1850 fit the MED sinusoid is at its maximum about now (2022), for the 1900 fit about ten years later (2031).
