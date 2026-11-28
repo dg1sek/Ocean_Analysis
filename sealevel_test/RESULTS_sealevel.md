@@ -36,3 +36,18 @@ Modulo 75 yr the maxima of the four Mediterranean/Atlantic gauges (2014-2027) ar
 1. Tide gauges do not independently confirm the line: no clear line in any gauge, no forecast value.
 2. The phases are compatible with the SST line but are weak signals; a signal this small cannot be told apart from noise with 100-200 years of data.
 3. A fair statement: sea level neither supports nor contradicts the 75-yr line. Sea level also includes mass changes and land motion, which makes it a poor thermometer for this particular question.
+
+---
+# Part 2: apparent heat-reservoir depth from sea level versus SST (run 2026-11-28; rules in PREREG_sealevel.md part 2; `92_sealevel_depth.R`, `out/sealevel_depth.csv`)
+Slope of the k-year change in sea level (mm) on the k-year change in ERSST Mediterranean SST (K), 500 block bootstraps; implied depth H = slope / (alpha * 1000) with alpha = 2.3e-4 per K (assumed, +-20 %).
+| series | k (yr) | n | slope (mm/K) [95%] | R^2 | implied depth H (m) | slope interval excludes 0 |
+|---|---|---|---|---|---|---|
+| Mediterranean composite | 1 | 111 | 38.6 [5.6, 60.1] | 0.066 | 168 (140-210) | yes |
+| composite | 5 | 104 | 30.7 [2.3, 54.9] | 0.050 | 133 (111-167) | yes |
+| composite | 10 | 94 | 26.2 [15.7, 46.0] | 0.064 | 114 (95-142) | yes |
+| Trieste | 1 / 5 / 10 | 123 / 118 / 111 | 32 / 45 / 25 | 0.03 / 0.07 / 0.04 | 140 / 196 / 109 | no / yes / yes |
+| Genova | 1 / 5 / 10 | 101 / 89 / 76 | 36 / 42 / 17 | 0.08 / 0.11 / 0.03 | 155 / 182 / 73 | yes / yes / yes |
+| Marseille | 1 / 5 / 10 | 76 / 64 / 54 | 33 / 22 / 30 | 0.06 / 0.02 / 0.07 | 142 / 93 / 129 | yes / no / yes |
+Lag of the strongest correlation between 1-yr differences (composite): 0 years (r = 0.26); no lead or lag.
+
+Reading: the slope is positive and mostly significant at all timescales: 17-45 mm per K, i.e. an **apparent depth of roughly 100-200 m**, about the winter mixed-layer depth of the Mediterranean. This is only an apparent depth: sea level also contains mass, pressure, wind and land-motion terms, and the alpha value is an assumption. **R^2 is only 3-11 %**: most year-to-year sea-level variation in the Mediterranean is not tied to SST. The estimate is a rough number that can be used for orders of magnitude (heat capacity of a layer of about 100-200 m) and not as a precise depth. It does not say anything about the 75-yr line.
